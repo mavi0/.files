@@ -1,0 +1,5 @@
+ohmyzsh/ohmyzsh   path:plugins/dash
+ohmyzsh/ohmyzsh   path:plugins/brew
+ohmyzsh/ohmyzsh   path:plugins/iterm2
+ohmyzsh/ohmyzsh   path:plugins/macos
+ohmyzsh/ohmyzsh   path:plugins/macports

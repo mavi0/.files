@@ -1,0 +1,32 @@
+{
+  "name": "willfantom",
+  "image": "ghcr.io/willfantom/devcontainer:latest-alpine",
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=cached"
+  ],
+  "extensions": [
+    // generic extensions
+    "naumovs.color-highlight",
+    "oderwat.indent-rainbow",
+    "yzhang.markdown-all-in-one",
+    "mechatroner.rainbow-csv",
+    "stkb.rewrap",
+    "gruntfuggly.todo-tree",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "shardulm94.trailing-spaces",
+    "alefragnani.Bookmarks",
+    "mohsen1.prettify-json",
+    "spikespaz.vscode-smoothtype",
+    // for .files
+    "timonwong.shellcheck",
+    "rpinski.shebang-snippets"
+  ],
+  "settings": {
+    "files.eol": "\n",
+    "files.autoSave": "onFocusChange",
+    "rewrap.wrappingColumn": 80
+  }
+}

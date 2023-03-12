@@ -1,0 +1,26 @@
+[init]
+	defaultBranch = main
+[tag]
+	forceSignAnnotated = true
+[credential]
+	helper = osxkeychain
+[commit]
+	template = ~/.gitconfig.d/gitcommit
+	gpgsign = true
+[help]
+	autoCorrect = "prompt"
+[core]
+	excludesfile = ~/.gitconfig.d/gitignoreglobal
+	editor = "vim"
+[url "https://github.com/"]
+	insteadOf = gh:
+[url "https://gitlab.com/"]
+	insteadOf = gl:
+[advice]
+	detachedHead = false
+[user]
+	name = Will Fantom
+	email = willf@ntom.dev
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF4EkMzK5+1I+m0C/BfJ9MmngtscZjq6jAwRlRP5pFt+
+[gpg]
+	format = ssh

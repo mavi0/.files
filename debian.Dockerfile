@@ -1,18 +1,3 @@
-FROM rust:slim-bookworm as exa-builder
-
-RUN apt-get update -y && \
-  apt-get install -y --no-install-recommends \
-  cmake \
-  git \
-  libgit2-dev && \
-  apt-get clean autoclean && \
-  apt-get autoremove -y && \
-  rm -rf /var/lib/{apt,dpkg,cache,log}/
-
-ARG EXA_VERSION=0.10.1
-RUN cargo install --version ${EXA_VERSION} exa
-
-
 FROM rust:slim-bookworm as starship-builder
 
 RUN apt-get update -y && \
@@ -45,6 +30,7 @@ RUN apt-get update -y && \
   apt-get update -y && \
   apt-get install -y --no-install-recommends \
   docker-ce-cli \
+  exa \
   git \
   openssh-client \
   tmux \
@@ -56,7 +42,6 @@ RUN apt-get update -y && \
   apt-get autoremove -y && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-COPY --from=exa-builder /usr/local/cargo/bin/exa /usr/bin/
 COPY --from=starship-builder /usr/local/cargo/bin/starship /usr/bin/
 
 WORKDIR /root/.files

@@ -1,17 +1,20 @@
-FROM rust:slim-bookworm as starship-builder
+FROM rust:slim-bookworm as starship-downloader
 
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends \
-  cmake \
-  git \
-  libgit2-dev \
-  make && \
+  curl && \
   apt-get clean autoclean && \
   apt-get autoremove -y && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-ARG STARSHIP_VERSION=1.13.1
-RUN cargo install --version ${STARSHIP_VERSION} starship
+WORKDIR /usr/scripts
+RUN curl -sS -o starship.sh  https://starship.rs/install.sh && \
+  chmod +x starship.sh && \
+  ./starship.sh -y
+
+
+# ARG STARSHIP_VERSION=1.13.1
+# RUN cargo install --version ${STARSHIP_VERSION} starship
 
 
 FROM debian:bookworm-slim
@@ -42,7 +45,7 @@ RUN apt-get update -y && \
   apt-get autoremove -y && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-COPY --from=starship-builder /usr/local/cargo/bin/starship /usr/bin/
+COPY --from=starship-downloader /usr/local/bin/starship /usr/bin/
 
 WORKDIR /root/.files
 COPY . .

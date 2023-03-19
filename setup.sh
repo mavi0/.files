@@ -1,10 +1,15 @@
 #!/usr/bin/env zsh
 set -o errexit
 set -o nounset
+
 cd "$(dirname "$0")"
 
 BASE_DIR="$(pwd)"
-TARGET_DIR="${HOME}"
+if [ $# -eq 0 ]; then
+  TARGET_DIR="${HOME}"
+else
+  TARGET_DIR="${1}"
+fi
 
 DOTFILES=()
 DOTFILES+=('.zshrc')          #main rc file for zsh

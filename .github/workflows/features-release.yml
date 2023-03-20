@@ -18,7 +18,7 @@ jobs:
         with:
           publish-features: "true"
           base-path-to-features: "./features"
-          generate-docs: "false"
+          generate-docs: "true"
           features-namespace: "willfantom/features"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

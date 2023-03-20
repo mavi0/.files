@@ -1,8 +1,27 @@
 {
   "name": "Fantom's Dotfiles",
   "id": "dotfiles",
-  "version": "1.0.0",
-  "description": "Use the dotfiles from willfantom/.files",
-  "options": {},
+  "version": "1.0.1",
+  "description": "Use the dotfiles from willfantom/.files. This installs all required packages via apt and cleans up apt.",
+  "options": {
+    "tz": {
+      "type": "string",
+      "description": "Set the timezone",
+      "proposals": [
+        "Europe/London",
+        "Europe/Berlin"
+      ],
+      "default": "Europe/London"
+    },
+    "locale": {
+      "type": "string",
+      "description": "Set the locale",
+      "proposals": [
+        "en_GB",
+        "en_US"
+      ],
+      "default": "en_GB"
+    }
+  },
   "installsAfter": []
 }

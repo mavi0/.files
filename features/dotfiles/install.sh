@@ -29,15 +29,15 @@ function install_starship() {
 }
 
 export DEBIAN_FRONTEND=noninteractive
-export TZ=Europe/London
+export TZ=${TZ}
 
 check_packages "ca-certificates" "curl" "exa" "git" "gnupg" "locales" "openssh-client" "tmux" "tzdata" "vim" "zoxide" "zsh"
 install_starship
 
-echo "LC_ALL=en_GB.UTF-8" >> /etc/environment
-echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
-echo "LANG=en_GB.UTF-8" > /etc/locale.conf
-locale-gen en_GB.UTF-8
+echo "LC_ALL=${LOCALE}.UTF-8" >> /etc/environment
+echo "${LOCALE}.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=${LOCALE}.UTF-8" > /etc/locale.conf
+locale-gen "${LOCALE}.UTF-8"
 
 apt_clean
 

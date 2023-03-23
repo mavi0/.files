@@ -19,8 +19,8 @@
 [advice]
 	detachedHead = false
 [user]
-	name = Will Fantom
-	email = willf@ntom.dev
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF4EkMzK5+1I+m0C/BfJ9MmngtscZjq6jAwRlRP5pFt+
+	name = Eleanor Davies
+	email = ellie@mavieson.co.uk
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTkiSmf31f/UDMZIBNhYTOxBZrYqSMgCuj8uNbDFX/Oy2Qq1TuC0ACEABRE/10EbMxJApWv6eUjOZLI06vU/+k7tS645yYL9krcJAxiD6Spw+1IJUT+ohB1ANkKWVJ9dH/dw633nf796qZDZT9SORjrIIN8YyZt+Z1gDGmnIfvq9whbiioygBOZmtRkN61cqP7v3qxxrMmIe1eWZW71Ow4rz2ZtRocfDu7OzC1sElCWDGBxe6Ca7HrN0xlGjK4AxmXgbO5erY53BR2E1+HJQvuUzgLcHo4pxjF5n/8DHkF3GdHlU00Ei9ZK5oA1QWBwPdjnb6UvPN6BKwKEuafuhPV arisaie@zeus
 [gpg]
 	format = ssh
